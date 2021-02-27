@@ -1,0 +1,71 @@
+import java.util.*;
+
+public class Main {
+  public static void main(String args[]) {
+    List<String> list = new ArrayList<String>();
+    Scanner input = new Scanner (System.in);
+    boolean condicion1 = true;
+    int mesas;
+    int disp;
+    int per = 0;
+
+    
+
+    System.out.print(" \n ---------------------------  ");
+    System.out.print("\n|                           |");
+    System.out.print("\n \n|  Bienvenido a FLASH WAIT! | \n");
+    System.out.print("\n|                           |");
+    System.out.print(" \n ---------------------------  \n");
+    
+    System.out.print("Como se llama el Restaurante? \n");
+    String rest = input.nextLine();
+    System.out.print("Bienvenido " + rest + " a FLASH WAIT \n");
+
+    while (condicion1 == true){
+      System.out.print("\n Cuantas mesas se situan en " + rest + " actualmente? \n");
+      mesas = input.nextInt();
+      mesa[] dispon = new mesa[mesas+1];
+      dispon[mesas] = new mesa((int)mesas, (int)per);
+      System.out.print("\n Actualmente hay " + mesas + " mesas en " + rest + " correcto? \n");
+      System.out.print(" 1) no \n 2) si \n");
+      int dec1 = input.nextInt();
+      
+
+      switch (dec1){
+        case 1: 
+          System.out.print("Porfavor, Ingrese el numero correcto de mesas disponibles. \n  \n");
+          break;
+
+        case 2:
+          System.out.print("\n Actualmente hay " + mesas + " mesas en " + rest + "\n");
+          condicion1 = false;
+      }
+        }
+        /*for (int i = mesas; i < mesas; i++){
+          System.out.print("Ingrese cuantas mesas estan ocupadas \n");
+          disp = input.nextInt();
+          if(disp < dispon.mesas){
+            System.out.print("si hay mesas disponibles \n");
+          }
+          else {
+            System.out.print("no hay mesas disponibles \n");
+            
+      }
+      */
+      do {
+        System.out.println("La lista de espera es" + list);
+        System.out.println("Agregar cliente? (y/n)");
+        if (input.next().startsWith("y")) {
+            System.out.println("Ingrese el nombre del cliente : ");
+            list.add(input.next());
+        } else {
+            break;
+        }
+    } while (true);
+    input.close();
+    System.out.println("Clientes en cola " + list);
+    String[] arr = list.toArray(new String[0]);
+    System.out.println("Aqui esta la listay " + Arrays.toString(arr));
+    }
+  }
+  
