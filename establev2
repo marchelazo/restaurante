@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class lista_espera {
+  public static void main(String args[]) {
+    List<String> list = new ArrayList<String>();
+    List <String> lista_especial = new ArrayList <String>();
+    Scanner input = new Scanner (System.in);
+    boolean condicion1 = true;
+
+    while (condicion1 == true){
+      System.out.print("1. Agregar lista espera\n2. Agregar lista de espera especial\n3. Ver listas");
+      int dec1 = input.nextInt();
+      
+
+      switch (dec1){
+        case 1: 
+        do {
+            System.out.println("La lista de espera es" + list);
+            System.out.println("Agregar cliente? (y/n)");
+            if (input.next().startsWith("y")) {
+                System.out.println("Ingrese el nombre del cliente : ");
+                list.add(input.next());
+            } else {
+                break;
+            }
+        } while (true);
+        System.out.println("Clientes en cola " + list);
+        break;
+
+        case 2:
+        do {
+            System.out.println("La lista de espera especial es" + lista_especial);
+            System.out.println("Agregar cliente? (y/n)");
+            if (input.next().startsWith("y")) {
+                System.out.println("Ingrese el nombre del cliente : ");
+                list.add(input.next());
+            } else {
+                break;
+            }
+        } while (true);
+        System.out.println("Clientes en espera especial " + lista_especial);
+        break;
+    }
+  }
+  }
+}
